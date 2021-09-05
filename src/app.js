@@ -10,6 +10,8 @@ const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
+const port = process.env.PORT || 8080
+
 // Define path for express config
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
@@ -87,6 +89,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(8080, () => {
-  console.log('Port 3001')
+app.listen(port, () => {
+  console.log(`Port ${port}`)
 })
